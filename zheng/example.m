@@ -20,5 +20,9 @@ matchedDistorted = validPtsDistorted(indexPairs(:,2));
 figure
 showMatchedFeatures(original,distorted,matchedOriginal,matchedDistorted)
 
-
+[tform, inlierDistorted,inlierOriginal] = estimateGeometricTransform(matchedDistorted,matchedOriginal,'similarity');
+figure
+showMatchedFeatures(original,distorted,inlierOriginal,inlierDistorted)
+title('Matching points (inliers only)')
+legend('ptsOriginal','ptsDistorted')
 
