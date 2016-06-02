@@ -1,0 +1,17 @@
+- Zusammenfassung Schritte
+- gut und schlecht funktionierendes Beispiel
+- Beispiele mit verschiedenen Änderungen (Rotation, Verschiebung, Skalierung,...)
+- Beispiel Anwendung Recover:story line:
+  1. original distor
+  
+  ted zeigen
+  2. detect feature
+  3. distorted recover
+  4. vergleichen neue features
+- Codezeilen erklären
+  - einzelne Methoden
+    - begriffe (SURF), bsp.
+    - parameter, unterschiedliche Ergebnisse.
+    - Mathe???(welche filter, maske...)
+  - bezogen auf Vorlesungsinhalte
+ 
