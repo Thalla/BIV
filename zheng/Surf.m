@@ -4,7 +4,11 @@ J = imresize(original,scale);
 theta = 31;
 distorted = imrotate(J,theta);
 original= rgb2gray(original);
+figure
+imshow(original);
 distorted=rgb2gray(distorted);
+figure
+imshow(distorted);
 ptsOriginalSURF  = detectSURFFeatures(original);
 ptsDistortedSURF = detectSURFFeatures(distorted);
 [featuresOriginalSURF,  validPtsOriginalSURF]  = extractFeatures(original,  ptsOriginalSURF);
@@ -17,7 +21,7 @@ showMatchedFeatures(original, distorted, matchedOriginalSURF, matchedDistortedSU
 title('Putative matches using SURF & FREAK')
 legend('ptsOriginalSURF','ptsDistortedSURF')
 
-[tform, inlierDistorted,inlierOriginal] = estimateGeometricTransform(matchedDistorted,matchedOriginal,'similarity');
+[tform, inlierDistorted,inlierOriginal] = estimateGeometricTransform(matchedDistortedSURF,matchedOriginalSURF,'similarity');
 outputView = imref2d(size(original));
 recovered  = imwarp(distorted,tform,'OutputView',outputView);
 figure

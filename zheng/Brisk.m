@@ -17,7 +17,7 @@ showMatchedFeatures(original, distorted, matchedOriginalBRISK, matchedDistortedB
 title('Putative matches using BRISK & FREAK')
 legend('ptsOriginalBRISK','ptsDistortedBRISK')
 
-[tform, inlierDistorted,inlierOriginal] = estimateGeometricTransform(matchedDistorted,matchedOriginal,'similarity');
+[tform, inlierDistorted,inlierOriginal] = estimateGeometricTransform(matchedDistortedBRISK,matchedOriginalBRISK,'similarity');
 outputView = imref2d(size(original));
 recovered  = imwarp(distorted,tform,'OutputView',outputView);
 figure
